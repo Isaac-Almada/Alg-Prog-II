@@ -1,3 +1,5 @@
+//*Esse código ordena de maneira parcial (k), de acordo com o k escolhido pelo usuário.
+
 #include <stdio.h>
 
 void bubbleSort(int num[], int tam, int parcial);
@@ -26,6 +28,9 @@ int main()
 
 void bubbleSort(int num[], int tam, int parcial)
 {
+    if (parcial > tam)
+        parcial = tam;
+
     int temp;
     for(int i = 0; i < parcial; i++)
     {
