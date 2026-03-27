@@ -1,3 +1,5 @@
+//*Nesse código, o usuário escolhe como quer que o vetor seja ordenado;
+
 #include <stdio.h>
 
 void bubbleSortCresc(int num[], int tam);
