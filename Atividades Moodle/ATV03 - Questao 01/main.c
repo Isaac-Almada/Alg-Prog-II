@@ -4,8 +4,8 @@ int insertionSort(int A[], int n);
 
 int main()
 {
-    int numeros[4] = {5, 2, 4, 6};
-    insertionSort(numeros, 4);
+    int numeros[5] = {5, 2, 4, 6};
+    insertionSort(numeros, 5);
 
     for(int i = 0; i < 4; i++){
         printf("%d ", numeros[i]);
@@ -20,7 +20,8 @@ int insertionSort(int A[], int n) {
         j = i - 1;
 
         // Move os elementos maiores que o pivo
-        while (j >= 0 && A[j] > pivo) {
+        while (j >= 0 && A[j] > pivo) 
+        {
             A[j + 1] = A[j];
             j--;
         }
