@@ -6,7 +6,7 @@ int merge(int A[], int inicio, int meio, int fim);
 
 int main() 
 {
-    int A[] = {8, 3, 5, 2, 9, 1};
+    int A[] = {1,2,3,4,5,6};
     int n = sizeof(A) / sizeof(A[0]);
     int cont;
 
@@ -62,7 +62,7 @@ int merge(int A[], int inicio, int meio, int fim)
         else
         {
             A[k] = direita[j];
-            j++;
+            j++; 
         }
         
         k++;
