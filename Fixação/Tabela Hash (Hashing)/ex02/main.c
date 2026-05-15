@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX 100
+#define MAX 10
 
 typedef struct Item{
     char* nome;
@@ -16,6 +16,20 @@ typedef struct Item{
 typedef struct{
     Item* tabela[MAX];
 } TabelaHash;
+
+
+//duplicar string -> vai compilar melhor
+char* duplicarString(const char* str)
+{
+    char* copia = malloc(strlen(str) + 1);
+
+    if(copia != NULL)
+    {
+        strcpy(copia, str);
+    }
+
+    return copia;
+}
 
 int calcularHash(char* chave)
 {
@@ -35,7 +49,7 @@ void inserir(TabelaHash* tabela, char* chave)
     {
         if(strcmp(atual -> nome, chave) == 0)
         {
-            printf("Erro: '%s' já existe na tabela.\n");
+            printf("Erro: '%s' já existe na tabela.\n", chave);
             return;
         }
         
@@ -43,7 +57,7 @@ void inserir(TabelaHash* tabela, char* chave)
     }
 
     Item* novoItem = (Item*) malloc(sizeof(Item));
-    novoItem -> nome = strdup(chave); // Aloca memória e copia a string
+    novoItem -> nome = duplicarString(chave); // Aloca memória e copia a string
     novoItem -> valor = 0; // Valor padrão
     novoItem -> prox = tabela -> tabela[indice]; // Insere no início da lista
     tabela -> tabela[indice] = novoItem; // Atualiza o início da lista
